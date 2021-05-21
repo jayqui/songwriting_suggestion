@@ -1,16 +1,16 @@
-import tempos from './tempos'
+import sample from './utils/sample'
+import selectWeighted from './utils/selectWeighted'
 
-function sample(items) {
-  return items[Math.floor(Math.random() * items.length)]
-}
+import emotions from './options/emotions'
+import timeSignatures from './options/timeSignatures'
 
-function tempo() {
-  return sample(tempos);
-}
+const emotion = sample(emotions);
+const timeSignature = selectWeighted(timeSignatures);
 
 function run() {
   return {
-    tempo: tempo(),
+    emotion,
+    timeSignature,
   }
 }
 
