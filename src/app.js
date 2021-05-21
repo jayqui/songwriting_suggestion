@@ -1,2 +1,17 @@
-const nums = [1,2,3];
-const doubleNums = nums.map((e) => e * 2);
+import tempos from './tempos'
+
+function sample(items) {
+  return items[Math.floor(Math.random() * items.length)]
+}
+
+function tempo() {
+  return sample(tempos);
+}
+
+function run() {
+  return {
+    tempo: tempo(),
+  }
+}
+
+console.log(run());
