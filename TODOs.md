@@ -12,12 +12,15 @@ TODOs.md
 ##### medium
 * mode : weighted (major & minor more often)
 * beats per minute : weighted
-* choosing inputs
+- choosing inputs
 
 ##### Hard
+* Beat
+  - dependent inputs (beat depends on time signature)
 * Chords
-  * dependent inputs (depends on mode)
+  - dependent inputs (chords depends on mode)
 * Melody Shape
+  - dependent inputs (melody depends on chords)
 
 ### Doing
 * verb tense

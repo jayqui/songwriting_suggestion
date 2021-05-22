@@ -12,6 +12,10 @@ var _emotions = require('./options/emotions');
 
 var _emotions2 = _interopRequireDefault(_emotions);
 
+var _persons = require('./options/persons');
+
+var _persons2 = _interopRequireDefault(_persons);
+
 var _verbTenses = require('./options/verbTenses');
 
 var _verbTenses2 = _interopRequireDefault(_verbTenses);
@@ -24,6 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // unweighted options
 var emotion = (0, _sample2.default)(_emotions2.default);
+var person = (0, _sample2.default)(_persons2.default);
 var verbTense = (0, _sample2.default)(_verbTenses2.default);
 
 // weighted options
@@ -32,6 +37,7 @@ var timeSignature = (0, _selectWeighted2.default)(_timeSignatures2.default);
 function run() {
   return {
     emotion: emotion,
+    person: person,
     timeSignature: timeSignature,
     verbTense: verbTense
   };
