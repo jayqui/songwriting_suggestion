@@ -2,10 +2,11 @@ TODOs.md
 
 ### Todo
 ##### Easy
+* key
+* color
+* song structure
 * character relation to narrator
 * character role in society
-* key
-* song structure
 
 ##### medium
 * mode : weighted (major & minor more often)
