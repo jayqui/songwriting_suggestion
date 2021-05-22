@@ -16,6 +16,10 @@ var _persons = require('./options/persons');
 
 var _persons2 = _interopRequireDefault(_persons);
 
+var _genders = require('./options/genders');
+
+var _genders2 = _interopRequireDefault(_genders);
+
 var _verbTenses = require('./options/verbTenses');
 
 var _verbTenses2 = _interopRequireDefault(_verbTenses);
@@ -33,12 +37,14 @@ var verbTense = (0, _sample2.default)(_verbTenses2.default);
 
 // weighted options
 var timeSignature = (0, _selectWeighted2.default)(_timeSignatures2.default);
+var gender = (0, _selectWeighted2.default)(_genders2.default);
 
 function run() {
   return {
     emotion: emotion,
-    person: person,
     timeSignature: timeSignature,
+    person: person,
+    gender: gender,
     verbTense: verbTense
   };
 }

@@ -2,8 +2,6 @@ TODOs.md
 
 ### Todo
 ##### Easy
-* 1st-2nd-3rd person / singular vs. plural
-* character gender
 * character relation to narrator
 * character role in society
 * key
@@ -21,6 +19,7 @@ TODOs.md
   - dependent inputs (chords depends on mode)
 * Melody Shape
   - dependent inputs (melody depends on chords)
+- allow users to callibrate weighted probabilities
 
 ### Doing
 * verb tense
@@ -28,3 +27,6 @@ TODOs.md
 ### Done
 * Emotion
 * Time Signature (meter)
+* 1st-2nd-3rd person / singular vs. plural
+- weighted probabilities
+* character gender
