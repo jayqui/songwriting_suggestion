@@ -3,9 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.NOTE_NAMES = undefined;
 exports.getScale = getScale;
 exports.getChordsInScale = getChordsInScale;
 exports.getParallelKeyBorrowableChords = getParallelKeyBorrowableChords;
+
+var _chordsPerMode = require('../utils/chordsPerMode');
+
+var _chordsPerMode2 = _interopRequireDefault(_chordsPerMode);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var NOTE_NAMES = exports.NOTE_NAMES = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
 var INCLUDE_SHARPS = ['G', 'D', 'A', 'E', 'B'];
 // const INCLUDE_FLATS = ['F', 'Bb', 'Eb', 'Ab', 'Db',]
@@ -22,53 +30,6 @@ var MODES = {
   'ionian': [2, 2, 1, 2, 2, 2, 1], // example of C: C D E F G A B
   'minor': [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
   'aeolian': [2, 1, 2, 2, 1, 2, 2] // example of A: A B C D E F G
-};
-
-var CHORDS_PER_MODE = {
-  'major': function major(scale) {
-    return {
-      I: scale[0] + ' major',
-      ii: scale[1] + ' minor',
-      iii: scale[2] + ' minor',
-      IV: scale[3] + ' major',
-      V: scale[4] + ' major',
-      vi: scale[5] + ' minor',
-      viiº: scale[6] + ' diminished'
-    };
-  },
-  'ionian': function ionian(scale) {
-    return {
-      I: scale[0] + ' major',
-      ii: scale[1] + ' minor',
-      iii: scale[2] + ' minor',
-      IV: scale[3] + ' major',
-      V: scale[4] + ' major',
-      vi: scale[5] + ' minor',
-      viiº: scale[6] + ' diminished'
-    };
-  },
-  'aeolian': function aeolian(scale) {
-    return {
-      i: scale[0] + ' minor',
-      iiº: scale[1] + ' diminished',
-      III: scale[2] + ' major',
-      IV: scale[3] + ' major',
-      V: scale[4] + ' major',
-      vi: scale[5] + ' minor',
-      viiº: scale[6] + ' diminished'
-    };
-  },
-  'minor': function minor(scale) {
-    return {
-      i: scale[0] + ' minor',
-      iiº: scale[1] + ' diminished',
-      III: scale[2] + ' major',
-      iv: scale[3] + ' minor',
-      v: scale[4] + ' minor',
-      VI: scale[5] + ' major',
-      VII: scale[6] + ' major'
-    };
-  }
 };
 
 function getScale(scaleNoteName, mode) {
@@ -91,7 +52,7 @@ function getScale(scaleNoteName, mode) {
 
 function getChordsInScale(scaleNoteName, mode) {
   var scale = getScale(scaleNoteName, mode);
-  return CHORDS_PER_MODE[mode](scale);
+  return _chordsPerMode2.default[mode](scale);
 }
 
 function getParallelKeyBorrowableChords(scaleNoteName, mode) {

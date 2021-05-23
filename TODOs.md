@@ -2,7 +2,6 @@ TODOs.md
 
 ### Todo
 ##### Easy
-* key
 * color
 * song structure
 * character relation to narrator
@@ -16,10 +15,8 @@ TODOs.md
 ##### Hard
 * Beat
   - dependent inputs (beat depends on time signature)
-* Chords
-  - dependent inputs (chords depends on mode)
 * Melody Shape
-  - dependent inputs (melody depends on chords)
+  - dependent inputs (melody depends on chords & measure length)
 - allow users to callibrate weighted probabilities
 
 ### Doing
@@ -31,3 +28,7 @@ TODOs.md
 * 1st-2nd-3rd person / singular vs. plural
 - weighted probabilities
 * character gender
+* basic 2 modes
+* Chords
+  - dependent inputs (chords depends on mode)
+* key

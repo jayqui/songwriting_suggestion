@@ -1,3 +1,5 @@
+import CHORDS_PER_MODE from '../utils/chordsPerMode';
+
 export const NOTE_NAMES = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 const INCLUDE_SHARPS = ['G', 'D', 'A', 'E', 'B']
 // const INCLUDE_FLATS = ['F', 'Bb', 'Eb', 'Ab', 'Db',]
@@ -14,45 +16,6 @@ const MODES = {
   'ionian':  [2, 2, 1, 2, 2, 2, 1], // example of C: C D E F G A B
   'minor':   [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
   'aeolian': [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
-}
-
-const CHORDS_PER_MODE = {
-  'major': (scale) => ({
-    I: `${scale[0]} major`,
-    ii: `${scale[1]} minor`,
-    iii: `${scale[2]} minor`,
-    IV: `${scale[3]} major`,
-    V: `${scale[4]} major`,
-    vi: `${scale[5]} minor`,
-    viiº: `${scale[6]} diminished`,
-  }),
-  'ionian': (scale) => ({
-    I: `${scale[0]} major`,
-    ii: `${scale[1]} minor`,
-    iii: `${scale[2]} minor`,
-    IV: `${scale[3]} major`,
-    V: `${scale[4]} major`,
-    vi: `${scale[5]} minor`,
-    viiº: `${scale[6]} diminished`,
-  }),
-  'aeolian': (scale) => ({
-    i: `${scale[0]} minor`,
-    iiº: `${scale[1]} diminished`,
-    III: `${scale[2]} major`,
-    IV: `${scale[3]} major`,
-    V: `${scale[4]} major`,
-    vi: `${scale[5]} minor`,
-    viiº: `${scale[6]} diminished`,
-  }),
-  'minor': (scale) => ({
-    i: `${scale[0]} minor`,
-    iiº: `${scale[1]} diminished`,
-    III: `${scale[2]} major`,
-    iv: `${scale[3]} minor`,
-    v: `${scale[4]} minor`,
-    VI: `${scale[5]} major`,
-    VII: `${scale[6]} major`,
-  }),
 }
 
 export function getScale(scaleNoteName, mode) {
