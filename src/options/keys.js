@@ -1,4 +1,4 @@
-const NOTE_NAMES = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
+export const NOTE_NAMES = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab']
 const INCLUDE_SHARPS = ['G', 'D', 'A', 'E', 'B']
 // const INCLUDE_FLATS = ['F', 'Bb', 'Eb', 'Ab', 'Db',]
 const FLAT_TO_SHARP_TRANSLATION = {
@@ -14,6 +14,45 @@ const MODES = {
   'ionian':  [2, 2, 1, 2, 2, 2, 1], // example of C: C D E F G A B
   'minor':   [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
   'aeolian': [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
+}
+
+const CHORDS_PER_MODE = {
+  'major': (scale) => ({
+    I: `${scale[0]} major`,
+    ii: `${scale[1]} minor`,
+    iii: `${scale[2]} minor`,
+    IV: `${scale[3]} major`,
+    V: `${scale[4]} major`,
+    vi: `${scale[5]} minor`,
+    viiº: `${scale[6]} diminished`,
+  }),
+  'ionian': (scale) => ({
+    I: `${scale[0]} major`,
+    ii: `${scale[1]} minor`,
+    iii: `${scale[2]} minor`,
+    IV: `${scale[3]} major`,
+    V: `${scale[4]} major`,
+    vi: `${scale[5]} minor`,
+    viiº: `${scale[6]} diminished`,
+  }),
+  'aeolian': (scale) => ({
+    i: `${scale[0]} minor`,
+    iiº: `${scale[1]} diminished`,
+    III: `${scale[2]} major`,
+    IV: `${scale[3]} major`,
+    V: `${scale[4]} major`,
+    vi: `${scale[5]} minor`,
+    viiº: `${scale[6]} diminished`,
+  }),
+  'minor': (scale) => ({
+    i: `${scale[0]} minor`,
+    iiº: `${scale[1]} diminished`,
+    III: `${scale[2]} major`,
+    iv: `${scale[3]} minor`,
+    v: `${scale[4]} minor`,
+    VI: `${scale[5]} major`,
+    VII: `${scale[6]} major`,
+  }),
 }
 
 export function getScale(scaleNoteName, mode) {
@@ -35,12 +74,16 @@ export function getScale(scaleNoteName, mode) {
   return accum;
 }
 
-const keys = [
-  {
-    // name: 'A minor',
-    // 'diatonic chords': {
-    // }
-  }
-]
+export function getChordsInScale(scaleNoteName, mode) {
+  const scale = getScale(scaleNoteName, mode);
+  return CHORDS_PER_MODE[mode](scale);
+}
 
-export default keys;
+export function getParallelKeyBorrowableChords(scaleNoteName, mode) {
+  if (!['minor', 'major'].includes(mode.toLowerCase())) {
+    throw new Error('Not supported unless mode is major or minor');
+  }
+
+  const parallelMode = mode.toLowerCase() === 'minor' ? 'major' : 'minor';
+  return getChordsInScale(scaleNoteName, parallelMode);
+}
