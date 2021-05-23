@@ -28,9 +28,9 @@ var _verbTenses = require('./options/verbTenses');
 
 var _verbTenses2 = _interopRequireDefault(_verbTenses);
 
-var _timeSignatures = require('./options/timeSignatures');
+var _beatsPerMeasureCandidates = require('./options/beatsPerMeasureCandidates');
 
-var _timeSignatures2 = _interopRequireDefault(_timeSignatures);
+var _beatsPerMeasureCandidates2 = _interopRequireDefault(_beatsPerMeasureCandidates);
 
 var _keys = require('./options/keys');
 
@@ -44,13 +44,13 @@ var scaleRootNote = (0, _sample2.default)(_keys.NOTE_NAMES);
 var mode = (0, _sample2.default)(_modes2.default);
 
 // weighted options
-var timeSignature = (0, _selectWeighted2.default)(_timeSignatures2.default);
+var beatsPerMeasure = (0, _selectWeighted2.default)(_beatsPerMeasureCandidates2.default);
 var gender = (0, _selectWeighted2.default)(_genders2.default);
 
 function run() {
   return {
     emotion: emotion,
-    timeSignature: timeSignature,
+    beatsPerMeasure: beatsPerMeasure,
     person: person,
     gender: gender,
     verbTense: verbTense,

@@ -1,4 +1,4 @@
-const timeSignatures = {
+const beatsPerMeasureCandidates = {
   '4/4': 50,
   '6/8': 20,
   '3/4': 15,
@@ -7,4 +7,4 @@ const timeSignatures = {
   '7/4': 5,
 }
 
-export default timeSignatures;
+export default beatsPerMeasureCandidates;

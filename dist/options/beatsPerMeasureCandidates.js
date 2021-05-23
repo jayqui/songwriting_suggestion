@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var timeSignatures = {
+var beatsPerMeasureCandidates = {
   '4/4': 50,
   '6/8': 20,
   '3/4': 15,
@@ -12,4 +12,4 @@ var timeSignatures = {
   '7/4': 5
 };
 
-exports.default = timeSignatures;
+exports.default = beatsPerMeasureCandidates;

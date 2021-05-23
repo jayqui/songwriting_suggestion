@@ -6,7 +6,7 @@ import persons from'./options/persons'
 import genders from'./options/genders'
 import modes from'./options/modes'
 import verbTenses from './options/verbTenses'
-import timeSignatures from './options/timeSignatures'
+import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates'
 import { getScale, getChordsInScale, getParallelKeyBorrowableChords, NOTE_NAMES as scaleRootNotes } from './options/keys';
 
 // unweighted options
@@ -17,13 +17,13 @@ const scaleRootNote = sample(scaleRootNotes);
 const mode = sample(modes);
 
 // weighted options
-const timeSignature = selectWeighted(timeSignatures);
+const beatsPerMeasure = selectWeighted(beatsPerMeasureCandidates);
 const gender = selectWeighted(genders);
 
 function run() {
   return {
     emotion,
-    timeSignature,
+    beatsPerMeasure,
     person,
     gender,
     verbTense,
