@@ -1,8 +1,5 @@
 import { getScale, getChordsInScale, getParallelKeyBorrowableChords } from '../src/options/keys';
-import { expect }from 'chai'
-// import assert from 'assert'
-// import expect from 'expect'
-
+import { expect } from 'chai'
 
 describe('#getScale', () => {
   describe('returns the correct scale for the specified mode', () => {

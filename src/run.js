@@ -8,6 +8,7 @@ import modes from'./options/modes'
 import verbTenses from './options/verbTenses'
 import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates'
 import { getScale, getChordsInScale, getParallelKeyBorrowableChords, NOTE_NAMES as scaleRootNotes } from './options/keys';
+import randomRhythm from './options/randomRhythm'
 
 // unweighted options
 const emotion = sample(emotions);
@@ -31,6 +32,7 @@ function run() {
     scale: getScale(scaleRootNote, mode),
     chordsInScale: getChordsInScale(scaleRootNote, mode),
     parallelKeyBorrowableChords: getParallelKeyBorrowableChords(scaleRootNote, mode),
+    randomRhythm: randomRhythm(beatsPerMeasure),
   }
 }
 

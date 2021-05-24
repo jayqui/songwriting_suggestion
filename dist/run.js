@@ -34,6 +34,10 @@ var _beatsPerMeasureCandidates2 = _interopRequireDefault(_beatsPerMeasureCandida
 
 var _keys = require('./options/keys');
 
+var _randomRhythm = require('./options/randomRhythm');
+
+var _randomRhythm2 = _interopRequireDefault(_randomRhythm);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // unweighted options
@@ -57,7 +61,8 @@ function run() {
     key: scaleRootNote + ' ' + mode,
     scale: (0, _keys.getScale)(scaleRootNote, mode),
     chordsInScale: (0, _keys.getChordsInScale)(scaleRootNote, mode),
-    parallelKeyBorrowableChords: (0, _keys.getParallelKeyBorrowableChords)(scaleRootNote, mode)
+    parallelKeyBorrowableChords: (0, _keys.getParallelKeyBorrowableChords)(scaleRootNote, mode),
+    randomRhythm: (0, _randomRhythm2.default)(beatsPerMeasure)
   };
 }
 
