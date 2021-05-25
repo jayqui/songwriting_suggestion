@@ -1,11 +1,18 @@
-import sample from '../utils/sample';
+import selectWeighted from '../utils/selectWeighted';
 
 const NOTE_START = '*'
 const NOTE_CONTINUE = '='
 const MUSICAL_REST = '_'
-const ALL_OPTIONS = [NOTE_START, NOTE_CONTINUE, MUSICAL_REST];
+const ALL_OPTIONS = {
+  [NOTE_START]: 25,
+  [NOTE_CONTINUE]: 50,
+  [MUSICAL_REST]: 25,
+};
 const NON_MUSICAL_REST_OPTIONS = [NOTE_START, NOTE_CONTINUE];
-const NON_NOTE_CONTINUE_OPTIONS = [NOTE_START, MUSICAL_REST];
+const NON_NOTE_CONTINUE_OPTIONS = {
+  [NOTE_START]: 67,
+  [MUSICAL_REST]: 33,
+};
 
 export default function randomRhythm(beatsPerMeasure) {
   const accum = [];
@@ -16,9 +23,9 @@ export default function randomRhythm(beatsPerMeasure) {
     const previousSubBeatExistedAndWasNotARest = NON_MUSICAL_REST_OPTIONS.includes(previousSubBeat);
 
     if (previousSubBeatExistedAndWasNotARest) {
-      accum.push(sample(ALL_OPTIONS));
+      accum.push(selectWeighted(ALL_OPTIONS));
     } else {
-      accum.push(sample(NON_NOTE_CONTINUE_OPTIONS));
+      accum.push(selectWeighted(NON_NOTE_CONTINUE_OPTIONS));
     }
   }
 
