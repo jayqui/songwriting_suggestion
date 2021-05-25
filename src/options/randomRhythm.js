@@ -12,19 +12,15 @@ export default function randomRhythm(beatsPerMeasure) {
   const sixteenthsPerMeasure = beatsPerMeasure * 4;
 
   for (let i = 0; i < sixteenthsPerMeasure; i++) {
-    const previousNote = accum[accum.length - 1];
-    const previousNoteExistedAndWasNotARest = NON_MUSICAL_REST_OPTIONS.includes(previousNote);
+    const previousSubBeat = accum[accum.length - 1];
+    const previousSubBeatExistedAndWasNotARest = NON_MUSICAL_REST_OPTIONS.includes(previousSubBeat);
 
-    if (previousNoteExistedAndWasNotARest) {
+    if (previousSubBeatExistedAndWasNotARest) {
       accum.push(sample(ALL_OPTIONS));
     } else {
       accum.push(sample(NON_NOTE_CONTINUE_OPTIONS));
     }
-
-    if (i % 4 == 3) {
-      accum.push('|')
-    }
   }
 
-  return accum.join('');
+  return accum;
 }

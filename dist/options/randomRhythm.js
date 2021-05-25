@@ -23,19 +23,15 @@ function randomRhythm(beatsPerMeasure) {
   var sixteenthsPerMeasure = beatsPerMeasure * 4;
 
   for (var i = 0; i < sixteenthsPerMeasure; i++) {
-    var previousNote = accum[accum.length - 1];
-    var previousNoteExistedAndWasNotARest = NON_MUSICAL_REST_OPTIONS.includes(previousNote);
+    var previousSubBeat = accum[accum.length - 1];
+    var previousSubBeatExistedAndWasNotARest = NON_MUSICAL_REST_OPTIONS.includes(previousSubBeat);
 
-    if (previousNoteExistedAndWasNotARest) {
+    if (previousSubBeatExistedAndWasNotARest) {
       accum.push((0, _sample2.default)(ALL_OPTIONS));
     } else {
       accum.push((0, _sample2.default)(NON_NOTE_CONTINUE_OPTIONS));
     }
-
-    if (i % 4 == 3) {
-      accum.push('|');
-    }
   }
 
-  return accum.join('');
+  return accum;
 }
