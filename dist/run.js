@@ -32,6 +32,10 @@ var _beatsPerMeasureCandidates = require('./options/beatsPerMeasureCandidates');
 
 var _beatsPerMeasureCandidates2 = _interopRequireDefault(_beatsPerMeasureCandidates);
 
+var _getRandomInt = require('./utils/getRandomInt');
+
+var _getRandomInt2 = _interopRequireDefault(_getRandomInt);
+
 var _keys = require('./options/keys');
 
 var _randomRhythm = require('./options/randomRhythm');
@@ -59,6 +63,7 @@ function run() {
   return {
     emotion: emotion,
     beatsPerMeasure: beatsPerMeasure,
+    beatsPerMinute: (0, _getRandomInt2.default)(60, 181),
     person: person,
     gender: gender,
     verbTense: verbTense,
