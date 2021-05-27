@@ -1,5 +1,5 @@
 import randomRhythm from './randomRhythm';
-import { getScale } from './keys';
+import getScale from './getScale';
 import sample from '../utils/sample';
 
 export default function randomMelody({ scaleRootNote, mode, beatsPerMeasure }) {
