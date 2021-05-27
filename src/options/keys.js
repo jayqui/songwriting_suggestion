@@ -18,15 +18,16 @@ const MODES = {
   'aeolian': [2, 1, 2, 2, 1, 2, 2], // example of A: A B C D E F G
 }
 
-export function getScale(scaleNoteName, mode) {
+export function getScale(scaleRootNote, mode) {
   const accum = []
-  const indexOfScaleNoteName = NOTE_NAMES.indexOf(scaleNoteName);
-  let counter = indexOfScaleNoteName;
+  const indexOfscaleRootNote = NOTE_NAMES.indexOf(scaleRootNote);
+  let counter = indexOfscaleRootNote;
 
   MODES[mode.toLowerCase()].forEach((intervalLength) => {
     let noteToInclude = NOTE_NAMES[counter % NOTE_NAMES.length];
-    const shouldDisplayNoteAsSharp = INCLUDE_SHARPS.includes(scaleNoteName) &&
+    const shouldDisplayNoteAsSharp = INCLUDE_SHARPS.includes(scaleRootNote) &&
       Object.keys(FLAT_TO_SHARP_TRANSLATION).includes(noteToInclude)
+
     if (shouldDisplayNoteAsSharp) {
       noteToInclude = FLAT_TO_SHARP_TRANSLATION[noteToInclude];
     }

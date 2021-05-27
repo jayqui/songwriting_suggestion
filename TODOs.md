@@ -9,11 +9,11 @@ TODOs.md
 
 ##### medium
 * mode : weighted (major & minor more often)
-* beats per minute : weighted
+* beats per minute weighted
 - choosing inputs
 
 ##### Hard
-* Beat
+* Drum Beat
   - dependent inputs (beat depends on time signature)
 * Melody Shape
   - dependent inputs (melody depends on chords & measure length)
@@ -32,3 +32,4 @@ TODOs.md
 * Chords
   - dependent inputs (chords depends on mode)
 * key
+* beats per minute

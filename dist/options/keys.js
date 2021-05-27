@@ -56,10 +56,6 @@ function getChordsInScale(scaleNoteName, mode) {
 }
 
 function getParallelKeyBorrowableChords(scaleNoteName, mode) {
-  if (!['minor', 'major'].includes(mode.toLowerCase())) {
-    throw new Error('Not supported unless mode is major or minor');
-  }
-
-  var parallelMode = mode.toLowerCase() === 'minor' ? 'major' : 'minor';
+  var parallelMode = mode.toLowerCase() === 'major' ? 'minor' : 'major';
   return getChordsInScale(scaleNoteName, parallelMode);
 }
