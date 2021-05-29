@@ -43,7 +43,7 @@ describe('#getScale', () => {
     it('returns the correct scale for the locrian mode', () => {
       expect(getScale('B', 'locrian')).to.deep.eq(['B', 'C', 'D', 'E', 'F', 'G', 'A']);
       // expect(getScale('E', 'locrian')).to.deep.eq(['E', 'F', 'G', 'A', 'Bb', 'C', 'D']); // renders Bb as A# but should not
-      // expect(getScale('F#', 'locrian')).to.deep.eq(['F#', 'G', 'A', 'B', 'C', 'D', 'E']); // does not recognize F# as a note
+      // expect(getScale('F#', 'locrian')).to.deep.eq(['F#', 'G', 'A', 'B', 'C', 'D', 'E']); // renders F# as Gb but should not
     });
   });
 });
