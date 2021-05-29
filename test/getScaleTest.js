@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import getScale from '../src/options/getScale';
 
-describe.only('#getScale', () => {
+describe('#getScale', () => {
   describe('returns the correct scale for the specified mode', () => {
     it('returns the correct scale for the ionian (major) mode', () => {
       expect(getScale('C', 'major')).to.deep.eq(['C', 'D', 'E', 'F', 'G', 'A', 'B']);
