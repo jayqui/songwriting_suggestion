@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d dist",
+    "go": "rm -rf dist/* && yarn build && node dist/run.js && rm -rf dist/*",
     "test": "mocha --require esm"
   },
   "author": "",
