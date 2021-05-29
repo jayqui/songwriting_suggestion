@@ -8,8 +8,8 @@ import modes from'./options/modes'
 import verbTenses from './options/verbTenses'
 import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates'
 import getRandomInt from './utils/getRandomInt'
-import { getChordsInScale, getParallelKeyBorrowableChords, NOTE_NAMES as scaleRootNotes } from './options/keys';
-import getScale from '../src/options/getScale';
+import { getChordsInScale, getParallelKeyBorrowableChords } from './options/keys';
+import getScale, { NOTE_NAMES as scaleRootNotes } from './options/getScale';
 import randomRhythm from './options/randomRhythm'
 import randomMelody from './options/randomMelody'
 
