@@ -5,6 +5,6 @@ const beatsPerMeasureCandidates = {
   2: 15,
   5: 10,
   7: 5,
-}
+};
 
 export default beatsPerMeasureCandidates;

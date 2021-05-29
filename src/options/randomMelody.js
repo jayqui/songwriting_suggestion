@@ -13,7 +13,7 @@ export default function randomMelody({ scaleRootNote, mode, beatsPerMeasure }) {
     } else {
       melody.push(subBeat);
     }
-  })
+  });
 
-  return melody
+  return melody;
 }

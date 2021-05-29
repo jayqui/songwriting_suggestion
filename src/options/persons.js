@@ -5,6 +5,6 @@ const persons = [
   'first person plural',
   'second person plural',
   'third person plural',
-]
+];
 
 export default persons;

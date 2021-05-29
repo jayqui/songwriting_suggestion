@@ -17,6 +17,6 @@ const emotions = [
   'overwhelm',
   'perplexity',
   'puzzlement',
-]
+];
 
 export default emotions;

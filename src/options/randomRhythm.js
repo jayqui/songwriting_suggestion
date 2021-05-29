@@ -1,8 +1,8 @@
 import selectWeighted from '../utils/selectWeighted';
 
-const NOTE_START = '*'
-const NOTE_CONTINUE = '='
-const MUSICAL_REST = '_'
+const NOTE_START = '*';
+const NOTE_CONTINUE = '=';
+const MUSICAL_REST = '_';
 const ALL_OPTIONS = {
   [NOTE_START]: 25,
   [NOTE_CONTINUE]: 50,

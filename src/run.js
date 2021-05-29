@@ -1,17 +1,17 @@
-import sample from './utils/sample'
-import selectWeighted from './utils/selectWeighted'
+import sample from './utils/sample';
+import selectWeighted from './utils/selectWeighted';
 
-import emotions from './options/emotions'
-import persons from'./options/persons'
-import genders from'./options/genders'
-import modes from'./options/modes'
-import verbTenses from './options/verbTenses'
-import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates'
-import getRandomInt from './utils/getRandomInt'
+import emotions from './options/emotions';
+import persons from'./options/persons';
+import genders from'./options/genders';
+import modes from'./options/modes';
+import verbTenses from './options/verbTenses';
+import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates';
+import getRandomInt from './utils/getRandomInt';
 import { getChordsInScale, getParallelKeyBorrowableChords } from './options/keys';
 import getScale, { NOTE_NAMES as scaleRootNotes } from './options/getScale';
-import randomRhythm from './options/randomRhythm'
-import randomMelody from './options/randomMelody'
+import randomRhythm from './options/randomRhythm';
+import randomMelody from './options/randomMelody';
 
 // unweighted options
 const emotion = sample(emotions);
@@ -38,7 +38,7 @@ function run() {
     parallelKeyBorrowableChords: getParallelKeyBorrowableChords(scaleRootNote, mode),
     randomRhythm: randomRhythm(beatsPerMeasure),
     randomMelody: randomMelody({ scaleRootNote, mode, beatsPerMeasure }),
-  }
+  };
 }
 
 console.log(run());

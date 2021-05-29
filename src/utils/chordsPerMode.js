@@ -23,6 +23,6 @@ const CHORDS_PER_MODE = {
   ionian: major,
   minor,
   aeolian: minor,
-}
+};
 
 export default CHORDS_PER_MODE;
