@@ -1,6 +1,12 @@
 TODOs.md
 
 ### Todo
+##### Debugging
+* Get to where all scales and keys can be selected & have the correct accidentals
+* add eslint
+* Start a frontend
+* Convert to Typescript
+
 ##### Easy
 * color
 * song structure
