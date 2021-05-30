@@ -8,7 +8,7 @@ const FLAT_TO_SHARP_TRANSLATION = {
   Gb: 'F#',
   Ab: 'G#',
 };
-const NOTES = {
+export const NOTES = {
   'A': 0,
   'A#': 1,
   'Bb': 1,
@@ -48,8 +48,8 @@ export default function getScale(scaleRootNote, mode) {
   }
 
   const accum = [];
-  const indexOfscaleRootNote = NOTES[scaleRootNote];
-  let counter = indexOfscaleRootNote;
+  const indexOfScaleRootNote = NOTES[scaleRootNote];
+  let counter = indexOfScaleRootNote;
 
   MODES[mode.toLowerCase()].forEach((intervalLength) => {
     let noteToInclude = NOTE_NAMES[counter % NOTE_NAMES.length];
