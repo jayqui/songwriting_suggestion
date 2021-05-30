@@ -1,3 +1,5 @@
+import getNameOfRelativeMajor from './getNameOfRelativeMajor'
+
 export const NOTE_NAMES = ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'];
 const INCLUDE_SHARPS = ['G', 'D', 'A', 'E', 'B'];
 // const INCLUDE_FLATS = ['F', 'Bb', 'Eb', 'Ab', 'Db',]
@@ -49,12 +51,13 @@ export default function getScale(scaleRootNote, mode) {
 
   const accum = [];
   const indexOfScaleRootNote = NOTES[scaleRootNote];
+  const [relativeMajor] = getNameOfRelativeMajor(scaleRootNote, mode);
   let counter = indexOfScaleRootNote;
 
   MODES[mode.toLowerCase()].forEach((intervalLength) => {
     let noteToInclude = NOTE_NAMES[counter % NOTE_NAMES.length];
-    const shouldDisplayNoteAsSharp = INCLUDE_SHARPS.includes(scaleRootNote) &&
-      Object.keys(FLAT_TO_SHARP_TRANSLATION).includes(noteToInclude);
+    const isAFlat = Object.keys(FLAT_TO_SHARP_TRANSLATION).includes(noteToInclude);
+    const shouldDisplayNoteAsSharp = isAFlat && INCLUDE_SHARPS.includes(relativeMajor);
 
     if (shouldDisplayNoteAsSharp) {
       noteToInclude = FLAT_TO_SHARP_TRANSLATION[noteToInclude];
