@@ -2,7 +2,6 @@ TODOs.md
 
 ### Todo
 ##### Debugging
-* add eslint
 * Start a frontend
 * Convert to Typescript
 
@@ -38,4 +37,5 @@ TODOs.md
   - dependent inputs (chords depends on mode)
 * key
 * beats per minute
+* add eslint
 * Get to where all scales and keys can be selected & have the correct accidentals
