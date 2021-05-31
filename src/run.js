@@ -6,10 +6,14 @@ import persons from'./options/persons';
 import genders from'./options/genders';
 import modes from'./options/modes';
 import verbTenses from './options/verbTenses';
+
 import beatsPerMeasureCandidates from './options/beatsPerMeasureCandidates';
 import getRandomInt from './utils/getRandomInt';
-import { getChordsInScale, getParallelKeyBorrowableChords } from './options/keys';
+
 import getScale, { NOTE_NAMES as scaleRootNotes } from './options/getScale';
+import getChordsInScale from './options/getChordsInScale';
+import getParallelKeyBorrowableChords from './options/getParallelKeyBorrowableChords';
+
 import randomRhythm from './options/randomRhythm';
 import randomMelody from './options/randomMelody';
 
@@ -18,11 +22,11 @@ const emotion = sample(emotions);
 const person = sample(persons);
 const verbTense = sample(verbTenses);
 const scaleRootNote = sample(scaleRootNotes);
-const mode = sample(modes);
 
 // weighted options
 const beatsPerMeasure = selectWeighted(beatsPerMeasureCandidates);
 const gender = selectWeighted(genders);
+const mode = selectWeighted(modes);
 
 function run() {
   return {
