@@ -1,6 +1,6 @@
 import getScale from './getScale';
 import getChordsInScale from './getChordsInScale';
-import modes from './modes';
+import modes from './modes'
 
 export default function getParallelKeyBorrowableChords(scaleNoteName, mode) {
   const recognizedModes = Object.keys(modes)
