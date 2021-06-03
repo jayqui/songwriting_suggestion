@@ -1,9 +1,6 @@
 TODOs.md
 
 ### Todo
-##### Debugging
-* Start a frontend
-* Convert to Typescript
 
 ##### Easy
 * color
@@ -12,19 +9,17 @@ TODOs.md
 * character role in society
 
 ##### medium
-* mode : weighted (major & minor more often)
 * beats per minute weighted
-- choosing inputs
+- allow users to choose which inputs they want to randomize
 
 ##### Hard
 * Drum Beat
   - dependent inputs (beat depends on time signature)
-* Melody Shape
-  - dependent inputs (melody depends on chords & measure length)
 - allow users to callibrate weighted probabilities
 
-### Doing
-* verb tense
+##### Nice and Hard / learning challenge
+* Start a frontend
+* Convert to Typescript
 
 ### Done
 * Emotion
@@ -39,3 +34,6 @@ TODOs.md
 * beats per minute
 * add eslint
 * Get to where all scales and keys can be selected & have the correct accidentals
+* mode : weighted (major & minor more often)
+* Melody Shape
+  - dependent inputs (melody depends on chords & measure length)
